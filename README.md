@@ -5,11 +5,6 @@ A full-screen cinema marquee display for Home Assistant that shows what's curren
 Features animated chase bulb lights, a red curtain banner, poster art with title overlays, and automatic switching between your dashboard and the Now Showing page.
 
 ![Platform](https://img.shields.io/badge/Platform-Home_Assistant-blue)
-
-<p align="center">
-  <img src="screenshots/now-showing.jpg" alt="Now Showing Marquee" width="400">
-</p>
-
 ## Features
 
 - Cinema-style marquee with animated chase bulb lights around the border
