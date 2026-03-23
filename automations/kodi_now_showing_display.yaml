@@ -1,0 +1,71 @@
+# Kodi - Now Showing Display
+#
+# Switches a Fully Kiosk Browser tablet to the Now Showing page
+# when Kodi starts playing, and back to your dashboard when
+# playback stops (idle or off).
+#
+# Prerequisites:
+#   - A Kodi media_player entity in Home Assistant (via the Kodi integration)
+#   - Fully Kiosk Browser integration with your tablet device
+#
+# Update the following before use:
+#   1. entity_id in trigger → your Kodi media_player entity ID
+#      (default: media_player.kodi)
+#   2. device_id in actions → your Fully Kiosk Browser device ID
+#   3. URLs in actions → your Home Assistant IP and dashboard path
+
+alias: "Kodi - Now Showing Display"
+description: >-
+  Switches the display to the cinema marquee when Kodi starts playing,
+  and back to the dashboard when playback stops (idle or off).
+mode: restart
+
+triggers:
+  - platform: state
+    entity_id: media_player.kodi  # Change to your Kodi entity ID
+
+conditions: []
+
+actions:
+  - choose:
+      # When Kodi starts playing → show Now Showing page
+      - conditions:
+          - condition: state
+            entity_id: media_player.kodi  # Change to your Kodi entity ID
+            state: "playing"
+        sequence:
+          - delay:
+              seconds: 5
+          - action: fully_kiosk.load_url
+            target:
+              device_id: YOUR_FULLY_KIOSK_DEVICE_ID  # Change to your device ID
+            data:
+              url: "http://YOUR_HA_IP:8123/local/now_showing.html"  # Change to your HA URL
+
+      # When Kodi becomes idle → return to dashboard
+      - conditions:
+          - condition: state
+            entity_id: media_player.kodi  # Change to your Kodi entity ID
+            state: "idle"
+        sequence:
+          - delay:
+              seconds: 10
+          - action: fully_kiosk.load_url
+            target:
+              device_id: YOUR_FULLY_KIOSK_DEVICE_ID  # Change to your device ID
+            data:
+              url: "http://YOUR_HA_IP:8123/dashboard-test/0"  # Change to your dashboard URL
+
+      # When Kodi turns off → return to dashboard
+      - conditions:
+          - condition: state
+            entity_id: media_player.kodi  # Change to your Kodi entity ID
+            state: "off"
+        sequence:
+          - delay:
+              seconds: 10
+          - action: fully_kiosk.load_url
+            target:
+              device_id: YOUR_FULLY_KIOSK_DEVICE_ID  # Change to your device ID
+            data:
+              url: "http://YOUR_HA_IP:8123/dashboard-test/0"  # Change to your dashboard URL
