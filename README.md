@@ -119,8 +119,9 @@ If you want a Fully Kiosk Browser tablet to automatically switch to the Now Show
 
 ## Related
 
-- [plex-now-showing](https://github.com/rusty4444/plex-now-showing) — the Plex version of this project
-- [kodi-recently-added-card](https://github.com/rusty4444/kodi-recently-added-card) — a Lovelace card showing recently added Kodi media
+- [kodi-recently-added-card](https://github.com/rusty4444/kodi-recently-added-card) — Lovelace card showing recently added Kodi media
+- [plex-now-showing](https://github.com/rusty4444/plex-now-showing) / [plex-recently-added-card](https://github.com/rusty4444/plex-recently-added-card) — Plex versions
+- [jellyfin-now-showing](https://github.com/rusty4444/jellyfin-now-showing) / [jellyfin-recently-added-card](https://github.com/rusty4444/jellyfin-recently-added-card) — Jellyfin versions
 
 ---
 
