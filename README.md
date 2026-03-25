@@ -16,6 +16,8 @@ Features animated chase bulb lights, a red curtain banner, poster art with title
 - Red curtain banner with "NOW SHOWING" text
 - Full-bleed poster art from the currently playing media
 - Title, episode info (for TV), and playback state overlays
+- **Tap for info** — tap the poster to see media type, content rating, duration, and player details
+- **Landscape mode** — optional flag to fit the entire poster on widescreen displays
 - Filters to a specific Kodi `media_player` entity so only your playback shows up
 - Idle state when nothing is playing
 - Optional automation to switch a Fully Kiosk Browser tablet between your dashboard and the Now Showing page
@@ -96,16 +98,33 @@ If you want a Fully Kiosk Browser tablet to automatically switch to the Now Show
 
 ---
 
+## Tap for Info
+
+Tap anywhere on the poster while media is playing to show an info panel. It slides up from the bottom and shows:
+
+- Title and episode info
+- Media type (Movie / TV Series), content rating, and duration
+- Player name
+
+The panel auto-dismisses after 8 seconds, or tap again to close it.
+
+---
+
 ## Customization
 
 | Setting | Where | Default |
 |---------|-------|---------|
 | Poll interval | `POLL_INTERVAL` in script | 5000ms (5 seconds) |
 | Kodi entity | `KODI_ENTITY` in script | `media_player.kodi` |
+| Landscape mode | `LANDSCAPE_MODE` in script | `false` (poster fills screen, may crop) |
 | Marquee text size | `.marquee-text h1` font-size in CSS | `clamp(3.5rem, 10vw, 8rem)` |
 | Bulb size | `.bulb` width/height in CSS | 28px |
 | Bulb spacing | `spacing` in `createOuterBulbs()` | 42px |
 | Chase animation speed | `setInterval(animateChase, ...)` | 500ms |
+
+### Landscape Mode
+
+If you're using a landscape/widescreen display instead of a portrait tablet, set `LANDSCAPE_MODE = true`. This fits the entire poster on screen with letterboxing (black bars) instead of cropping to fill.
 
 ---
 
