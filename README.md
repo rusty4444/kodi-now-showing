@@ -6,7 +6,9 @@
   </a>
 </p>
 
+> **⚠️ This card has been superseded by [home-assistant-now-showing](https://github.com/rusty4444/home-assistant-now-showing)** — a unified HA App that supports Plex, Kodi, Jellyfin, and Emby in one package, with new themed accents, lots of upgrades, no code setup, and a full visual editor. This repo will remain available but will not receive new features.
 
+---
 
 A full-screen cinema marquee display for Home Assistant that shows what's currently playing on Kodi. Designed for wall-mounted tablets using Fully Kiosk Browser.
 
