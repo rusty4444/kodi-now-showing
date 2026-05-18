@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> **⚠️ This card has been superseded by [home-assistant-now-showing](https://github.com/rusty4444/home-assistant-now-showing)** — a unified HA App that supports Plex, Kodi, Jellyfin, and Emby in one package, with new themed accents, lots of upgrades, no code setup, and a full visual editor. This repo will remain available but will not receive new features.
+> **⚠️ This card has been superseded by [now-showing-ha](https://github.com/rusty4444/now-showing-ha)** — a unified HA App that supports Plex, Kodi, Jellyfin, and Emby in one package, with new themed accents, lots of upgrades, no code setup, and a full visual editor. This repo will remain available but will not receive new features.
 
 ---
 
@@ -75,7 +75,7 @@ Open `now_showing.html` and update these values near the top of the `<script>` s
 
 ```javascript
 const HA_URL = 'http://YOUR_HA_IP:8123';           // Your Home Assistant URL
-const HA_TOKEN = 'YOUR_LONG_LIVED_ACCESS_TOKEN';    // HA long-lived access token
+const HA_TOKEN='YOUR_L...OKEN';    // HA long-lived access token
 const KODI_ENTITY = 'media_player.kodi';            // Your Kodi media_player entity ID
 ```
 
@@ -165,3 +165,9 @@ If you're using a landscape/widescreen display instead of a portrait tablet, set
 ## Credits
 
 Built by Sam Russell — AI used in development.
+
+---
+
+## Disclaimer
+
+This software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
